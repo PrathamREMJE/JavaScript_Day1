@@ -9,14 +9,12 @@
       function updateCartQuantity(change) {
         if (qty + change > 10) {
           alert('The cart is full');
-          return;
-        }
-        if (qty + change < 0) {
+        } else if (qty + change < 0) {
           alert('Not enough items in the cart');
-          return;
+        } else {
+          qty += change;
+          console.log(`Cart quantity: ${qty}`);
         }
-        qty += change;
-        console.log(`Cart quantity: ${qty}`);
       }
     </script>
     <button onclick="console.log(`Cart quantity: ${qty}`);">Show Quantity</button>
